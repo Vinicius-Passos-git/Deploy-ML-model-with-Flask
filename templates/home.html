@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Machine Learning - Predited Car Value</title>
-</head>
-<body>
-    <h3> Machine Learning - Predited Car Value </h3>
 
+<head>
+  <meta charset="utf-8" />
+
+  <title>Machine Learning - Car Value</title>
+
+</head>
+
+<body style="background-color:rgb(247, 240, 240)">
+ 
+  <center>
+    <div style="background-color:rgb(236, 230, 230)">
+    <h1> Machine Learning - Predicting the value of the car </h1>
+    </div>
 <div>
-<form action = '/result' method='POST'>
-    <label for='year'> year </label>
+  
+<form action = "{{ url_for('result')}}" method='POST'>
+    <label for='year'> How long car used (in years): </label>
     <select id = 'year' name = 'year'>
     <option value='0'>0</option>
       <option value='1'>1</option>
@@ -22,33 +31,88 @@
       <option value='9'>9</option>
       <option value='10'>10</option>
     </select>
+
     <br>
-    <label for='manufacturer'>manufacturer</label>
+    <br>
+
+    <label for='manufacturer'>Manufacturer: </label>
     <select id='manufacturer' name="manufacturer">
-      <option value='chevrolet'>chevrolet</option>
-      <option value="ford">ford</option>
+      <option value="bmw">BMW</option>
+      <option value='chevrolet'>CHEVROLET</option>
+      <option value="dodge-ram">DODGE-RAM</option>
+      <option value="ford">FORD</option>
+      <option value="gmc">GMC</option>
+      <option value="honda">HONDA</option>
+      <option value="hyundai">HYUNDAI</option>
+      <option value="jeep">JEEP</option>
+      <option value="mercedes-benz">MERCEDES-BENZ</option>
+      <option value="nissan">NISSAN</option>
+      <option value="porsche">PORSCHE</option>
+      <option value="subaru">SUBARU</option>
+      <option value="toyota">TOYOTA</option>
+      <option value="volkswagen">VOLKSWAGEN</option>
+      <option value="others">OTHERS</option>
     </select>
+
     <br>
-    <label for='odometer'>odometer</label>
-    <input id='odometer' name='odometer' required='required'>
     <br>
-    <label for='transmission'>transmission</label>
+
+    <label for='odometer'>Miles: </label>
+    <input id='odometer' name='odometer' type = 'int' required='required'>
+
+    <br>
+    <br>
+
+    <label for='transmission'>Transmission: </label>
     <select id='transmission' name='transmission'>
-      <option value='automatic'>automatic</option>
-      <option value='manual'>manual</option>
+      <option value='automatic'>AUTOMATIC</option>
+      <option value='manual'>MANUAL</option>
+      <option value='manual'>OTHER</option>
     </select>
+
     <br>
-    <label for='type'>type</label>
+    <br>
+
+    <label for='type'>Type of car: </label>
     <select id='type' name='type'>
-      <option value='SUV'>SUV</option>
+      <option value='bus'>BUS</option>
+      <option value='convertible'>CONVERTIBLE</option>
+      <option value='coupe'>COUPE</option>
       <option value='HATCH'>HATCH</option>
+      <option value='hatchback'>HATCHBACK</option>
+      <option value='mini-van'>MINI-VAN</option>
+      <option value='offroad'>OFFROAD</option>
+      <option value='pickup'>PICKUP</option>
+      <option value='sedan'>SEDAN</option>
+      <option value='SUV'>SUV</option>
+      <option value='truck'>TRUCK</option>
+      <option value='van'>VAN</option>
+      <option value='wagon'>WAGON</option>
+      <option value='other'>OTHER</option>
     </select>
+
+
     <br>
-    <input type="submit" value="Submit">
+    <br>
+
+    <button type="submit" class="btn">Predict</button>
+
   </form>
-  <p>
-    {{ predicted}}
-  </p>
+
+  <br>
+  <br>
+  <div style="background-color:rgb(236, 230, 230)">
+  <h1> {{ prediction_text }} </h1>
+  </div>
+  <br>
+  <br>
+
+  </center>
+
+  <footer>
+    <p>©vpr 2021</p>
+</footer>
+
 </div>
 
 </body>
