@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Machine Learning - Predited Car Value</title>
+</head>
+<body>
+    <h3> Machine Learning - Predited Car Value </h3>
+
+<div>
+<form action = '/result' method='POST'>
+    <label for='year'> year </label>
+    <select id = 'year' name = 'year'>
+    <option value='0'>0</option>
+      <option value='1'>1</option>
+      <option value='2'>2</option>
+      <option value='3'>3</option>
+      <option value='4'>4</option>
+      <option value='5'>5</option>
+      <option value='6'>6</option>
+      <option value='7'>7</option>
+      <option value='8'>8</option>
+      <option value='9'>9</option>
+      <option value='10'>10</option>
+    </select>
+    <br>
+    <label for='manufacturer'>manufacturer</label>
+    <select id='manufacturer' name="manufacturer">
+      <option value='chevrolet'>chevrolet</option>
+      <option value="ford">ford</option>
+    </select>
+    <br>
+    <label for='odometer'>odometer</label>
+    <input id='odometer' name='odometer' required='required'>
+    <br>
+    <label for='transmission'>transmission</label>
+    <select id='transmission' name='transmission'>
+      <option value='automatic'>automatic</option>
+      <option value='manual'>manual</option>
+    </select>
+    <br>
+    <label for='type'>type</label>
+    <select id='type' name='type'>
+      <option value='SUV'>SUV</option>
+      <option value='HATCH'>HATCH</option>
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  <p>
+    {{ predicted}}
+  </p>
+</div>
+
+</body>
+
+</html>
