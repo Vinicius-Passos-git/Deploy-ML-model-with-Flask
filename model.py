@@ -8,8 +8,8 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
-from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import cross_val_score
+import pickle
 
 pd.set_option('display.max_columns', None)
 
@@ -55,17 +55,4 @@ forest_rmse = np.sqrt(forest_mse)
 forest_rmse
 
 # %%
-forest_scores = cross_val_score(model, cars, cars_price,
-                                scoring="neg_mean_squared_error",
-                                cv=3)
-
-# %%
-forest_rmse_scores = np.sqrt(-forest_scores)
-forest_rmse_scores
-print('Mean for CV = 3', forest_rmse_scores.mean())
-print('Std for CV = 3', forest_rmse_scores.std())
-
-# %%
-print('finish')
-
-# %%
+model = pickle.dump(model, open("model.pkl", "wb"))
