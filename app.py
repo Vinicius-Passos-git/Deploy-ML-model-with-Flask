@@ -35,5 +35,5 @@ def result():
 #Used to puu debug into code. If you make a change in code, you just need
 #update the website and the application of changes will work
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug = True) 
     
